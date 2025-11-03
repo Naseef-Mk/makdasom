@@ -1,0 +1,193 @@
+.salalah-selector {
+  min-height: 100vh;
+  padding: 2rem;
+  animation: fadeIn 0.5s ease-in;
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.back-btn-selector {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(251, 191, 36, 0.3);
+  color: #fbbf24;
+  padding: 0.7rem 1.5rem;
+  border-radius: 25px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-bottom: 2rem;
+  font-weight: 600;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+.back-btn-selector:hover {
+  background: rgba(220, 38, 38, 0.2);
+  border-color: rgba(220, 38, 38, 0.5);
+  color: #fff;
+  box-shadow: 0 6px 20px rgba(220, 38, 38, 0.4);
+}
+
+.salalah-container {
+  max-width: 1000px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.logo-header {
+  margin-bottom: 1.5rem;
+  animation: fadeIn 0.8s ease-in;
+}
+
+.company-logo {
+  width: 250px;
+  height: 250px;
+  object-fit: contain;
+  filter: drop-shadow(0 0 30px rgba(251, 191, 36, 0.6));
+  border-radius: 15px;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  padding: 1rem;
+  background: #000;
+}
+
+.company-name {
+  font-size: 3rem;
+  background: linear-gradient(135deg, #fbbf24 0%, #dc2626 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-bottom: 0.5rem;
+  font-weight: 900;
+  letter-spacing: 4px;
+}
+
+.subtitle {
+  font-size: 1.2rem;
+  color: #fbbf24;
+  font-weight: 600;
+  text-shadow: 0 2px 10px rgba(251, 191, 36, 0.3);
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+.salalah-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  margin: 0 auto;
+}
+
+.location-card {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+  border: 1px solid rgba(251, 191, 36, 0.2);
+  border-radius: 20px;
+  overflow: hidden;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 
+    0 8px 32px rgba(0, 0, 0, 0.3),
+    inset 0 1px 0 rgba(255, 255, 255, 0.1);
+  position: relative;
+}
+
+.location-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, rgba(251, 191, 36, 0.1) 0%, rgba(220, 38, 38, 0.1) 100%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.location-card:hover::before {
+  opacity: 1;
+}
+
+.location-card:hover {
+  transform: translateY(-10px);
+  border-color: rgba(220, 38, 38, 0.5);
+  box-shadow: 
+    0 12px 40px rgba(220, 38, 38, 0.4),
+    inset 0 1px 0 rgba(255, 255, 255, 0.2);
+}
+
+.card-photo {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+  opacity: 0.9;
+}
+
+.card-content {
+  padding: 1rem;
+  position: relative;
+  z-index: 1;
+}
+
+.card-title {
+  font-size: 1.5rem;
+  color: #fff;
+  margin-bottom: 0.5rem;
+  font-weight: 700;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+}
+
+.card-area {
+  background: linear-gradient(135deg, #fbbf24 0%, #dc2626 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@media (max-width: 428px) {
+  .company-logo {
+    width: 100px;
+    height: 100px;
+    padding: 0.8rem;
+  }
+
+  .company-name {
+    font-size: 2rem;
+    letter-spacing: 2px;
+  }
+
+  .subtitle {
+    font-size: 1rem;
+  }
+
+  .salalah-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .card-photo {
+    height: 200px;
+  }
+}
